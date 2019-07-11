@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Reactivity(반응성) 구현</title>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script>
+        var div = document.querySelector('#app');
+        var viewModel = {};
+
+        // Object.defineProperty() 정적 메서드는 
+        // 객체에 직접 새로운 속성을 정의하거나 이미 존재하는 속성을 수정한 후, 
+        // 그 객체를 반환합니다.
+        // 객체의 동작을 재정의
+        // Object.defineProperty(대상객체, 객체의 속성, {
+        //     // 정의할 내용
+        // })
+
+        // Reactivity 코드 라이브러리화 하기
+        
+        // 즉시 실행
+        (function() {
+            function init() {
+            Object.defineProperty(viewModel, 'str', {
+                // 속성에 접근했을 때의 동작을 정의
+                get: function() {
+                    console.log('접근');
+                },
+                // 속성에 값을 할당했을 때의 동작을 정의
+                set: function(newValue) {
+                    console.log('할당', newValue);
+                    render(newValue);
+                }
+            });
+        }
+
+        function render(value) {
+            div.innerHTML = value;
+        }
+
+        init();
+        })();
+        
+
+        function render (value) {
+            div.innerHTML = value;
+        }
+
+        
+        // Reactivity(반응성) : vue의 핵심은 데이터의 변화를 
+        // library에서 감지해서 알아서 화면을 자동으로 그려주는 것
+
+        // const object1 = {}
+        // Object.defineProperty(object1, 'property1', {
+        //     value: 42,
+        //     writable: false
+        // });
+
+        // object1.property1 = 77;
+
+        // console.log(object1.property1);
+    </script>
+</body>
+</html>
