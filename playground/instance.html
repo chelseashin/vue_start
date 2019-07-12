@@ -7,11 +7,13 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- 인스턴스는 뷰로 개발할 때 필수로 생성해야 하는 코드 -->
     <div id="app">
         <!-- ...이곳의 기능과 속성이 유효해짐 -->
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
+        // 인스턴스 생성 - viewmodel의 약자
         var vm = new Vue({
             // app이라는 태그를 찾아서 인스턴스를 붙이겠다고 하는 의미
             el: '#app',
