@@ -38,7 +38,7 @@ export default {
           console.log(response);
         })
         .catch(function(error){
-          consol.log(error);
+          console.log(error);
         })
     }
   }

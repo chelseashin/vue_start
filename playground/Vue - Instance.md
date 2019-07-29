@@ -20,7 +20,7 @@
   Person {name: "chelsea", 'developer'}
   ```
 
-  
+
 
   ```javascript
   // 생성자 함수 정의 - logText라는 함수 넣어놓음
@@ -37,9 +37,7 @@
   vm.logText();
   ```
 
-  
-
-* 인스턴스에서 사용할 수 있는 속성과 API
+* 인스턴스에서 사용할 수 있는 속성과 API.
 
   ```javascript	
   <script>
@@ -59,5 +57,3 @@
           });
   </script>
   ```
-
-  
